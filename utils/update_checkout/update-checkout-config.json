@@ -40,6 +40,8 @@
             "remote": { "id": "apple/swift-integration-tests" } },
         "swift-xcode-playground-support": {
             "remote": { "id": "apple/swift-xcode-playground-support" } },
+        "swift-installer-scripts": {
+            "remote": { "id": "apple/swift-installer-scripts" } },
         "ninja": {
             "remote": { "id": "ninja-build/ninja" } },
         "icu": {
@@ -89,6 +91,7 @@
                 "swift-corelibs-libdispatch": "main",
                 "swift-integration-tests": "main",
                 "swift-xcode-playground-support": "main",
+                "swift-installer-scripts": "main",
                 "ninja": "release",
                 "icu": "release-65-1",
                 "yams": "4.0.2",
