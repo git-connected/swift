@@ -662,6 +662,13 @@ msbuild %SourceRoot%\swift-installer-scripts\platforms\Windows\installer.wixproj
 :: TODO(compnerd) actually perform the code-signing
 :: signtool sign /f Apple_CodeSign.pfx /p Apple_CodeSign_Password /tr http://timestamp.digicert.com /fd sha256 %PackageRoot%\installer\installer.exe
 
+:: TODO(compnerd) test LLVM
+
+:: Test Swift
+:: TODO(compnerd) make lit adjust the path properly
+path %BuildRoot%\Library\icu-67.1\usr\bin;%BuildRoot%\1\bin;%BuildRoot%\1\tools\swift\libdispatch-windows-x86_64-prefix\bin;%PATH%;%SystemDrive%\Program Files\Git\usr\bin
+cmake --build %BuildRoot%\1 --target check-swift || (exit /b)
+
 :: Clean up the module cache
 rd /s /q %LocalAppData%\clang\ModuleCache
 
